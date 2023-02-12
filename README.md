@@ -2,6 +2,8 @@
 
 The package provides several aggregate functions that work in the same way as `count()`, `withCount()`, `avg()`, `withAvg()`
 
+ <img alt="Eloquent withMedian, withPercentile" src="https://github.com/abordage/eloquent-percentile/blob/master/docs/images/eloquent-with-median-percentile.png?raw=true">
+
 <p style="text-align: center;" align="center">
 
 <a href="https://packagist.org/packages/abordage/eloquent-percentile" title="Packagist version">
