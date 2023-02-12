@@ -1,6 +1,30 @@
 # Laravel Eloquent withMedian(), withPercentile(), median() and percentile() for PostgeSQL
 
-The package provides several aggregate functions that work in the same way as `count()`, `withCount()`, `avg()`, `withAvg()`.
+The package provides several aggregate functions that work in the same way as `count()`, `withCount()`, `avg()`, `withAvg()`
+
+<p style="text-align: center;" align="center">
+
+<a href="https://packagist.org/packages/abordage/eloquent-percentile" title="Packagist version">
+    <img alt="Packagist Version" src="https://img.shields.io/packagist/v/abordage/eloquent-percentile">
+</a>
+
+<a href="https://github.com/abordage/eloquent-percentile/actions/workflows/tests.yml" title="GitHub Tests Status">
+    <img alt="GitHub Tests Status" src="https://img.shields.io/github/actions/workflow/status/abordage/eloquent-percentile/tests.yml?label=tests">
+</a>
+
+<a href="https://github.com/abordage/eloquent-percentile/actions/workflows/php-cs-fixer.yml" title="GitHub Code Style Status">
+    <img alt="GitHub Code Style Status" src="https://img.shields.io/github/actions/workflow/status/abordage/eloquent-percentile/php-cs-fixer.yml?label=code%20style">
+</a>
+
+<a href="https://www.php.net/" title="PHP version">
+    <img alt="PHP Version Support" src="https://img.shields.io/packagist/php-v/abordage/eloquent-percentile">
+</a>
+
+<a href="https://github.com/abordage/eloquent-percentile/blob/master/LICENSE.md" title="License">
+    <img alt="License" src="https://img.shields.io/github/license/abordage/eloquent-percentile">
+</a>
+
+</p>
 
 ## Requirements
 - PHP 7.4 or higher
