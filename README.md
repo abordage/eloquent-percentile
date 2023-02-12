@@ -1,6 +1,6 @@
 # Laravel Eloquent withMedian(), withPercentile(), median() and percentile() for PostgeSQL
 
-The package provides several aggregate functions that work in the same way as `count()`, `withCount()`, `avg()`, `withAvg()`
+The package provides several aggregate functions that work in the same way as `avg()`, `withAvg()` and other
 
  <img alt="Eloquent withMedian, withPercentile" src="https://github.com/abordage/eloquent-percentile/blob/master/docs/images/eloquent-with-median-percentile.png?raw=true">
 
