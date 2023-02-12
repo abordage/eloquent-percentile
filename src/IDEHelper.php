@@ -41,7 +41,7 @@ namespace {
          * @param string|array $relation
          * @param string $column
          * @param float|int|string $percentile
-         * @return Builder
+         * @return Eloquent|Builder
          * @static
          */
         public static function withPercentile($relation, string $column, $percentile): Builder
@@ -55,7 +55,7 @@ namespace {
          *
          * @param string|array $relation
          * @param string $column
-         * @return Builder
+         * @return Eloquent|Builder
          * @static
          */
         public static function withMedian($relation, string $column): Builder

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Abordage\EloquentPercentile;
 
+use Eloquent;
 use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Query\Expression;
@@ -20,6 +21,9 @@ class EloquentPercentileServiceProvider extends ServiceProvider
 
     public static function percentileMacros(): void
     {
+        /**
+         * @return Eloquent|Builder
+         */
         Builder::macro('withPercentile', function ($relations, $column, $percentile) {
             if ($this->getConnection()->getDriverName() !== 'pgsql') {
                 throw new Exception('Driver ' . $this->getConnection()->getDriverName() . ' not supported');
@@ -100,6 +104,9 @@ class EloquentPercentileServiceProvider extends ServiceProvider
             return $this;
         });
 
+        /**
+         * @return Eloquent|Builder
+         */
         Builder::macro('withMedian', function ($relations, $column) {
             return $this->withPercentile($relations, $column, 0.5);
         });
