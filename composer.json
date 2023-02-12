@@ -1,0 +1,76 @@
+{
+    "name": "abordage/eloquent-percentile",
+    "description": "Laravel Eloquent withMedian(), withPercentile(), median() and percentile() aggregate functions",
+    "license": "MIT",
+    "keywords": [
+        "Laravel median",
+        "Laravel percentile",
+        "Laravel withMedian",
+        "Laravel withPercentile",
+        "Eloquent median",
+        "Eloquent percentile",
+        "Eloquent withMedian",
+        "Eloquent withPercentile"
+    ],
+    "authors": [
+        {
+            "name": "Pavel Bychko",
+            "email": "box@abordage.dev",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://github.com/abordage/eloquent-percentile",
+    "require": {
+        "php": "^7.4 || ^8.0 || ^8.1",
+        "illuminate/support": "^8.0 || ^9.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "nunomaduro/collision": "^5.0 || ^6.0",
+        "nunomaduro/larastan": "^1.0 || ^2.0",
+        "orchestra/testbench": "^6.0 || ^7.0",
+        "phpstan/phpstan": "^1.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Abordage\\EloquentPercentile\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Abordage\\EloquentPercentile\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Abordage\\EloquentPercentile\\EloquentPercentileServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "phpcsf": "vendor/bin/php-cs-fixer fix --diff",
+        "phpstan:generate-baseline": "vendor/bin/phpstan --generate-baseline",
+        "test:all": [
+            "@test:phpcsf",
+            "@test:phpstan",
+            "@test:phpunit"
+        ],
+        "test:phpcsf": "vendor/bin/php-cs-fixer fix --dry-run",
+        "test:phpstan": "vendor/bin/phpstan analyse",
+        "test:phpunit": "vendor/bin/phpunit --colors=always"
+    },
+    "scripts-descriptions": {
+        "phpcsf": "Run PHP-CS-Fixer fix",
+        "test:all": "Run all code analysis and tests",
+        "test:phpcsf": "Run PHP-CS-Fixer test",
+        "test:phpstan": "Run PHPStan",
+        "test:phpunit": "Run PHPUnit"
+    }
+}

@@ -1,0 +1,25 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+
+    paths:
+        - src
+        - tests
+
+    # The level 9 is the highest level
+    level: 9
+
+    ignoreErrors:
+        -
+            message: '#^Undefined variable\: \$instance$#'
+            path: src/IDEHelper.php
+        -
+            message: '#^Variable \$instance in PHPDoc tag @var does not exist\.$#'
+            path: src/IDEHelper.php
+        -
+            message: '#^Undefined variable\: \$this$#'
+            path: src/EloquentPercentileServiceProvider.php
+
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false

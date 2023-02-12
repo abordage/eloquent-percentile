@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+    bootstrap="vendor/autoload.php"
+    colors="true"
+    executionOrder="random"
+    failOnWarning="true"
+    failOnRisky="true"
+    failOnEmptyTestSuite="true"
+    beStrictAboutOutputDuringTests="true"
+    verbose="true"
+>
+    <testsuites>
+        <testsuite name="Abordage Eloquent Percentile Test Suite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+    <coverage>
+        <include>
+            <directory suffix=".php">./src</directory>
+        </include>
+        <report>
+            <html outputDirectory="build/coverage"/>
+            <text outputFile="build/coverage.txt"/>
+            <clover outputFile="build/logs/clover.xml"/>
+        </report>
+    </coverage>
+    <logging>
+        <junit outputFile="build/report.junit.xml"/>
+    </logging>
+    <php>
+        <env name="DB_CONNECTION_POSTGRES" value="pgsql"/>
+        <env name="DB_HOST_POSTGRES" value="localhost"/>
+        <env name="DB_PORT_POSTGRES" value="5432"/>
+        <env name="DB_DATABASE_POSTGRES" value="eloquent_percentile_test"/>
+        <env name="DB_USERNAME_POSTGRES" value="default"/>
+        <env name="DB_PASSWORD_POSTGRES" value="secret"/>
+    </php>
+</phpunit>
