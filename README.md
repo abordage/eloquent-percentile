@@ -1,6 +1,6 @@
-# Laravel Eloquent withMedian(), withPercentile(), median() and percentile() for PostgeSQL
+# Laravel Eloquent withMedian(), withPercentile() for PostgeSQL
 
-The package provides several aggregate functions that work in the same way as `avg()`, `withAvg()` and other
+The package provides several aggregate functions that work in the same way as `withAvg()`, `withMax()`
 
  <img alt="Eloquent withMedian, withPercentile" src="https://github.com/abordage/eloquent-percentile/blob/master/docs/images/eloquent-with-median-percentile.png?raw=true">
 
@@ -46,7 +46,7 @@ composer require abordage/eloquent-percentile
 ## Usage
 ### Aggregating Related Models
 
-Method `withMedian()` will place a `{relation}_median_{column}` attribute on your resulting models:
+The method `withMedian()` will place a `{relation}_median_{column}` attribute on your resulting models:
 
 ```php
 use App\Models\Post;
@@ -58,7 +58,7 @@ foreach ($posts as $post) {
 }
 ```
 
-Method `withPercentile()` will place a `{relation}_percentile{percentile*100}_{column}` attribute on your resulting models:
+The method `withPercentile()` will place a `{relation}_percentile{percentile*100}_{column}` attribute on your resulting models:
 
 ```php
 use App\Models\Post;
