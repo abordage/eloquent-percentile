@@ -24,7 +24,7 @@ class EloquentPercentileServiceProvider extends ServiceProvider
         /**
          * @return Eloquent|Builder
          */
-        Builder::macro('withPercentile', function ($relations, $column, $percentile) {
+        Builder::macro('withPercentile', function ($relations, $column, $percentile, $asMedian = false) {
             if ($this->getConnection()->getDriverName() !== 'pgsql') {
                 throw new Exception('Driver ' . $this->getConnection()->getDriverName() . ' not supported');
             }
@@ -94,7 +94,7 @@ class EloquentPercentileServiceProvider extends ServiceProvider
                     )
                 );
 
-                if ($percentile * 100 == 50) {
+                if ($percentile * 100 == 50 && $asMedian) {
                     $alias = Str::snake((string)preg_replace('/[^[:alnum:][:space:]_]/u', '', "$name median $column"));
                 }
 
@@ -108,7 +108,7 @@ class EloquentPercentileServiceProvider extends ServiceProvider
          * @return Eloquent|Builder
          */
         Builder::macro('withMedian', function ($relations, $column) {
-            return $this->withPercentile($relations, $column, 0.5);
+            return $this->withPercentile($relations, $column, 0.5, true);
         });
 
         Builder::macro('percentile', function ($column, $percentile) {

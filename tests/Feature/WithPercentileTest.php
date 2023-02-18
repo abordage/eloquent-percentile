@@ -17,6 +17,12 @@ class WithPercentileTest extends TestCase
         $this->assertEqualsWithDelta(601.25, $page->response_logs_percentile65_response_time, 0.001);
     }
 
+    public function test_percentile50(): void
+    {
+        $page = Page::withPercentile('responseLogs', 'response_time', 0.5)->first();
+        $this->assertEqualsWithDelta(315, $page->response_logs_percentile50_response_time, 0.001);
+    }
+
     public function test_zero(): void
     {
         $page = Page::withPercentile('responseLogs', 'response_time', 0)->first();
