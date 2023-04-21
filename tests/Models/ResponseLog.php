@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Abordage\EloquentPercentile\Tests\Models;
 
-use Eloquent;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -15,8 +14,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $page_id
  * @property int|null $response_time
  * @property-read Page $page
- *
- * @mixin Eloquent
+ * @method static float|null percentile($columns, $percentile)
+ * @method static float|null median($columns)
  */
 class ResponseLog extends Model
 {

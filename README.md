@@ -10,6 +10,10 @@ The package provides several aggregate functions that work in the same way as `w
     <img alt="Packagist Version" src="https://img.shields.io/packagist/v/abordage/eloquent-percentile">
 </a>
 
+<a href="https://github.com/abordage/eloquent-percentile/actions/workflows/tests.yml" title="GitHub Tests Coverage Status">
+    <img alt="GitHub Tests Coverage Status" src="https://img.shields.io/badge/coverage-100%25-blue">
+</a>
+
 <a href="https://github.com/abordage/eloquent-percentile/actions/workflows/tests.yml" title="GitHub Tests Status">
     <img alt="GitHub Tests Status" src="https://img.shields.io/github/actions/workflow/status/abordage/eloquent-percentile/tests.yml?label=tests">
 </a>

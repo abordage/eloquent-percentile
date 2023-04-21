@@ -64,7 +64,7 @@
         ],
         "test:phpcsf": "vendor/bin/php-cs-fixer fix --dry-run",
         "test:phpstan": "vendor/bin/phpstan analyse",
-        "test:phpunit": "vendor/bin/phpunit --colors=always"
+        "test:phpunit": "php -dxdebug.mode=coverage vendor/bin/phpunit"
     },
     "scripts-descriptions": {
         "phpcsf": "Run PHP-CS-Fixer fix",

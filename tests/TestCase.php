@@ -8,6 +8,10 @@ use Abordage\EloquentPercentile\EloquentPercentileServiceProvider;
 use Abordage\EloquentPercentile\Tests\Migration\Migration;
 use Orchestra\Testbench\TestCase as Orchestra;
 
+/**
+ * @coversNothing
+ * @small
+ */
 class TestCase extends Orchestra
 {
     protected function getPackageProviders($app): array
