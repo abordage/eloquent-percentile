@@ -10,3 +10,4 @@ composer.lock
 phpstan.neon
 phpunit.xml
 testbench.yaml
+/.phpunit.cache/
