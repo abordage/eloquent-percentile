@@ -55,7 +55,7 @@ jobs:
           composer update --prefer-dist --no-interaction --no-progress
 
       - name: Run tests
-        run: vendor/bin/phpunit --coverage_clover=build/logs/clover.xml
+        run: vendor/bin/phpunit --coverage-clover=build/logs/clover.xml
 
       - name: Upload coverage results to Coveralls
         env:
