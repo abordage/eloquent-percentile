@@ -4,15 +4,8 @@ on: [ push, pull_request ]
 
 jobs:
   build:
-
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        stability: [ prefer-stable ]
-        os: [ ubuntu-latest ]
-
     name: Laravel 10 on PHP 8.2
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
