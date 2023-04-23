@@ -33,8 +33,8 @@ The package provides several aggregate functions that work in the same way as `w
 </p>
 
 ## Requirements
-- PHP 7.4 or higher
-- Laravel 8+
+- PHP 7.4 - 8.2
+- Laravel 8.x - 10.x
 
 ## Supports:
 - PostgreSQL
