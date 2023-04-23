@@ -1,0 +1,42 @@
+name: PHPUnit Coverage
+
+on: [ push, pull_request ]
+
+jobs:
+  coverage:
+    name: Laravel 10 on PHP 8.2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+          tools: composer:v2, phpunit
+          coverage: xdebug
+
+      - name: Setup PostgreSQL
+        uses: ikalnytskyi/action-setup-postgres@v4
+        with:
+          username: default
+          password: secret
+          database: eloquent_percentile_test
+          port: 5432
+
+      - name: Install dependencies
+        run: |
+          composer require "laravel/framework=10.0" "orchestra/testbench=^8.0" --no-update
+          composer update --prefer-dist --no-interaction --no-progress
+
+      - name: Run tests
+        run: vendor/bin/phpunit
+
+      - name: Upload coverage results to Coveralls
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          composer global require php-coveralls/php-coveralls
+          php-coveralls --coverage_clover=build/logs/clover.xml -v

@@ -9,15 +9,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          ref: ${{ github.head_ref }}
 
-      - name: Run PHP CS Fixer
-        uses: docker://oskarstark/php-cs-fixer-ga
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
-          args: --config=.php-cs-fixer.dist.php
+          php-version: '8.2'
+          tools: cs2pr, php-cs-fixer
 
-      - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: fix styling
+      - name: Run phpcs
+        run: php-cs-fixer fix --dry-run --format=checkstyle | cs2pr

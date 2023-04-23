@@ -1,4 +1,4 @@
-name: Tests
+name: PHPUnit Tests
 
 on: [ push, pull_request ]
 
@@ -11,7 +11,7 @@ jobs:
       matrix:
         stability: [ prefer-stable ]
         os: [ ubuntu-latest ]
-        php: [7.4, 8.0, 8.1]
+        php: [7.4, 8.0, 8.1, 8.2]
         laravel: [8.*, 9.*, 10.*]
         include:
           - laravel: 8.*
@@ -27,6 +27,8 @@ jobs:
             laravel: 10.*
           - php: 8.0
             laravel: 10.*
+          - php: 8.2
+            laravel: 8.*
 
     name: Laravel ${{ matrix.laravel }} on PHP ${{ matrix.php }}
 
@@ -38,9 +40,8 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
-          tools: composer:v2
-          coverage: none
+          tools: composer:v2, phpunit
+          coverage: xdebug
 
       - name: Setup PostgreSQL
         uses: ikalnytskyi/action-setup-postgres@v4

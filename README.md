@@ -1,4 +1,4 @@
-# Laravel Eloquent withMedian(), withPercentile() for PostgeSQL
+# Laravel Eloquent withMedian, withPercentile, median and percentile aggregate functions for PostgeSQL
 
 The package provides several aggregate functions that work in the same way as `withAvg()`, `withMax()`
 
@@ -10,8 +10,8 @@ The package provides several aggregate functions that work in the same way as `w
     <img alt="Packagist Version" src="https://img.shields.io/packagist/v/abordage/eloquent-percentile">
 </a>
 
-<a href="https://github.com/abordage/eloquent-percentile/actions/workflows/tests.yml" title="GitHub Tests Coverage Status">
-    <img alt="GitHub Tests Coverage Status" src="https://img.shields.io/badge/coverage-100%25-blue">
+<a href="https://coveralls.io/github/abordage/eloquent-percentile" title="Coverage Status">
+    <img alt="Coverage Status" src="https://img.shields.io/coverallsCoverage/github/abordage/eloquent-percentile">
 </a>
 
 <a href="https://github.com/abordage/eloquent-percentile/actions/workflows/tests.yml" title="GitHub Tests Status">
@@ -33,8 +33,8 @@ The package provides several aggregate functions that work in the same way as `w
 </p>
 
 ## Requirements
-- PHP 7.4 or higher
-- Laravel 8+
+- PHP 7.4 - 8.2
+- Laravel 8.x - 10.x
 
 ## Supports:
 - PostgreSQL
