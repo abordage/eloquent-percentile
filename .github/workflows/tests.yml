@@ -38,9 +38,9 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
-          tools: composer:v2
-          coverage: none
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo, xdebug
+          tools: composer:v2, phpunit
+          coverage: xdebug
 
       - name: Setup PostgreSQL
         uses: ikalnytskyi/action-setup-postgres@v4
@@ -56,10 +56,7 @@ jobs:
           composer update --prefer-dist --no-interaction --no-progress
 
       - name: Run tests
-        uses: php-actions/phpunit@v3
-        with:
-          php_extensions: "xdebug"
-          coverage_clover: "build/logs/clover.xml"
+        run: vendor/bin/phpunit
 
       - name: Upload coverage results to Coveralls
         env:
