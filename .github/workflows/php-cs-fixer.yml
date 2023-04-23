@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -14,4 +17,4 @@ jobs:
           tools: cs2pr, php-cs-fixer
 
       - name: Run phpcs
-        run: php-cs-fixer fix --dry-run --config=.php-cs-fixer.dist.php --format=checkstyle | cs2pr
+        run: php-cs-fixer fix --dry-run --format=checkstyle | cs2pr
