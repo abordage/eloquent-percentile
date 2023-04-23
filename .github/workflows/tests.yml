@@ -41,7 +41,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           tools: composer:v2, phpunit
-          coverage: none
+          coverage: xdebug
 
       - name: Setup PostgreSQL
         uses: ikalnytskyi/action-setup-postgres@v4
