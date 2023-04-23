@@ -3,7 +3,7 @@ name: PHPUnit Coverage
 on: [ push, pull_request ]
 
 jobs:
-  build:
+  coverage:
     name: Laravel 10 on PHP 8.2
     runs-on: ubuntu-latest
 
