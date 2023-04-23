@@ -14,4 +14,4 @@ jobs:
           tools: cs2pr, php-cs-fixer
 
       - name: Run phpcs
-        run: php-cs-fixer fix --dry-run --format=checkstyle | cs2pr
+        run: php-cs-fixer fix --dry-run --config=.php-cs-fixer.dist.php --format=checkstyle | cs2pr
