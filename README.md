@@ -1,4 +1,4 @@
-# Laravel Eloquent withMedian, withPercentile, median and percentile for PostgeSQL
+# Laravel Eloquent withMedian, withPercentile, median and percentile aggregate functions for PostgeSQL
 
 The package provides several aggregate functions that work in the same way as `withAvg()`, `withMax()`
 
