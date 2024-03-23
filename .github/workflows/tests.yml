@@ -44,7 +44,7 @@ jobs:
           coverage: xdebug
 
       - name: Setup PostgreSQL
-        uses: ikalnytskyi/action-setup-postgres@v4
+        uses: ikalnytskyi/action-setup-postgres@v5
         with:
           username: default
           password: secret
