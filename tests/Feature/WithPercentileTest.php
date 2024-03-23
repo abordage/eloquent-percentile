@@ -70,22 +70,6 @@ class WithPercentileTest extends TestCase
         $this->assertNull($page->response_logs_percentile65_response_time);
     }
 
-//    public function test_wrong_type_argument_relation(): void
-//    {
-//        $this->expectException(Exception::class);
-//        $this->expectExceptionMessageMatches('/must be a string/');
-//
-//        Page::withPercentile(123, 'response_size', 0.95)->first();
-//    }
-//
-//    public function test_wrong_type_argument_column(): void
-//    {
-//        $this->expectException(Exception::class);
-//        $this->expectExceptionMessageMatches('/must be a string/');
-//
-//        Page::withPercentile('responseLogs', 123, 0.95)->first();
-//    }
-
     public function testMissingColumn(): void
     {
         $this->expectException(Exception::class);
