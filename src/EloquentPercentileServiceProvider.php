@@ -65,13 +65,13 @@ class EloquentPercentileServiceProvider extends ServiceProvider
                     $expression = sprintf(
                         'percentile_cont(%s) within group (order by %s)',
                         $percentile,
-                        $wrappedColumn
+                        $wrappedColumn,
                     );
 
                     $query = $relation->getRelationExistenceQuery(
                         $relation->getRelated()->newQuery(),
                         $this,
-                        new Expression($expression)
+                        new Expression($expression),
                     )->setBindings([], 'select');
 
                     $query->callScope($constraints);
@@ -82,16 +82,16 @@ class EloquentPercentileServiceProvider extends ServiceProvider
                     $query->setBindings([], 'order');
 
                     $alias = $alias ?? Str::snake(
-                        (string)preg_replace(
+                        (string) preg_replace(
                             '/[^[:alnum:][:space:]_]/u',
                             '',
-                            "$name percentile " . ($percentile * 100) . " $column"
-                        )
+                            "$name percentile " . ($percentile * 100) . " $column",
+                        ),
                     );
 
                     if ($percentile * 100 == 50 && $asMedian) {
                         $alias = Str::snake(
-                            (string)preg_replace('/[^[:alnum:][:space:]_]/u', '', "$name median $column")
+                            (string) preg_replace('/[^[:alnum:][:space:]_]/u', '', "$name median $column"),
                         );
                     }
 
@@ -99,7 +99,7 @@ class EloquentPercentileServiceProvider extends ServiceProvider
                 }
 
                 return $this;
-            }
+            },
         );
 
         Builder::macro('withMedian', /** @return \Eloquent|\Illuminate\Database\Eloquent\Builder */ function ($relations, $column) {
@@ -122,7 +122,7 @@ class EloquentPercentileServiceProvider extends ServiceProvider
             $wrappedColumn = $this->getGrammar()->wrap($column);
 
             $relation = $this->selectRaw(
-                sprintf('percentile_cont(%s) within group (order by %s)', $percentile, $wrappedColumn)
+                sprintf('percentile_cont(%s) within group (order by %s)', $percentile, $wrappedColumn),
             );
             $rows = $relation->get()->toArray();
 

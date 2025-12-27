@@ -4,7 +4,7 @@ on: [ push, pull_request ]
 
 jobs:
   coverage:
-    name: Laravel 10 on PHP 8.2
+    name: Laravel 12 on PHP 8.2
     runs-on: ubuntu-latest
 
     steps:
@@ -28,7 +28,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer require "laravel/framework=10.0" "orchestra/testbench=^8.0" --no-update
+          composer require "laravel/framework=12.*" "orchestra/testbench=^10.0" --no-update
           composer update --prefer-dist --no-interaction --no-progress
 
       - name: Run tests
