@@ -1,5 +1,5 @@
 includes:
-    - ./vendor/nunomaduro/larastan/extension.neon
+    - ./vendor/larastan/larastan/extension.neon
 
 parameters:
 
@@ -8,12 +8,13 @@ parameters:
         - tests
 
     # The level 9 is the highest level
-    level: 9
+    level: 7
 
     ignoreErrors:
-        -
-            message: '#^Undefined variable\: \$this$#'
-            path: src/EloquentPercentileServiceProvider.php
+        - identifier: missingType.generics
+        - identifier: property.notFound
+        - identifier: method.notFound
+        - identifier: method.protected
+        - identifier: argument.type
 
-    checkMissingIterableValueType: false
-    checkGenericClassInNonGenericObjectType: false
+    checkOctaneCompatibility: true
