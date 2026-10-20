@@ -14,7 +14,6 @@ parameters:
         - identifier: missingType.generics
         - identifier: property.notFound
         - identifier: method.notFound
-        - identifier: method.protected
         - identifier: argument.type
 
     checkOctaneCompatibility: true

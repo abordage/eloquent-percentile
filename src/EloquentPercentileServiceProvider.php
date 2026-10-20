@@ -44,7 +44,12 @@ class EloquentPercentileServiceProvider extends ServiceProvider
                 }
 
                 if (is_null($this->query->columns)) {
-                    $this->query->select([$this->query->from . '.*']);
+                    $from = $this->query->from;
+                    if ($from instanceof Expression) {
+                        $from = $from->getValue($this->query->getGrammar());
+                    }
+
+                    $this->query->select([$from . '.*']);
                 }
 
                 $relations = is_array($relations) ? $relations : [$relations];
@@ -69,8 +74,8 @@ class EloquentPercentileServiceProvider extends ServiceProvider
                     );
 
                     $query = $relation->getRelationExistenceQuery(
-                        $relation->getRelated()->newQuery(),
-                        $this,
+                        $relation->getRelated()->newQuery(), // @phpstan-ignore argument.unresolvableType
+                        $this, // @phpstan-ignore argument.unresolvableType
                         new Expression($expression),
                     )->setBindings([], 'select');
 
