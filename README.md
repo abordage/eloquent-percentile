@@ -34,7 +34,7 @@ The package provides several aggregate functions that work in the same way as `w
 
 ## Requirements
 - PHP 8.2+
-- Laravel 11.x / 12.x
+- Laravel 12.x / 13.x
 
 ## Supports:
 - PostgreSQL
